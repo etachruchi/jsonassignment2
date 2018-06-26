@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Json Table</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <table border="1" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>SL No</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>DOB</th>
+
+                </tr>
+            </thead>
+            <tbody id="demo">
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var obj;
+            obj = {
+                "emp": [{
+                    "firstname": "RAM",
+                    "lastname": "SHARMA",
+                    "dob": "01-01-2000",
+
+                }, {
+                    "firstname": "SHYAM",
+                    "lastname": "SHARMA",
+                    "dob": "01-01-2000",
+
+                }, {
+                    "firstname": "SHYAM",
+                    "lastname": "SHARMA",
+                    "dob": "01-01-2000",
+
+
+                }]
+            };
+
+
+            var firstname, lastname, dob, data;
+            for (var i = 0; i < obj.emp.length; i++) {
+                firstname = obj.emp[i].firstname;
+                lastname = obj.emp[i].lastname;
+                dob = obj.emp[i].dob;
+                data = "<tr><td>" + (i + 1) + "</td><td>" + firstname + "</td><td>" + lastname + "</td><td>" + dob + "</td>";
+                $("#demo").append(data);
+            }
+        });
+    </script>
+</body>
+
+</html>
